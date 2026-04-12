@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.11/dist/lenis.css">
     <link rel="icon" href="contents/images/favicon.png" type="image/png">
 
-
 </head>
 
 <body>
@@ -207,7 +206,8 @@
                     <h2 style="text-align: right;">online presence through</h2>
                     <h2 style="text-align: center;">websites &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp that</h2>
                     <h2>attract, engage, and</h2>
-                    <h2 class="convert" style="text-align: center; padding-left: 40vw;">convert<span class="accent">.</span></h2>
+                    <h2 class="convert" style="text-align: center; padding-left: 40vw;">convert<span
+                            class="accent">.</span></h2>
                 </div>
             </div>
         </section>
@@ -494,7 +494,16 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://unpkg.com/split-type"></script>
     <script src="/script.js"></script>
-
+    
+    <script>
+        function initApollo() {
+            var n = Math.random().toString(36).substring(7), o = document.createElement("script");
+            o.src = "https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=" + n, o.async = !0, o.defer = !0,
+                o.onload = function () { window.trackingFunctions.onLoad({ appId: "69dbc08bed2df6002160d084" }) },
+                document.head.appendChild(o)
+        }
+        initApollo();
+    </script>
 </body>
 
 </html>
