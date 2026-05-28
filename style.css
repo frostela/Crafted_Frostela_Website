@@ -25,6 +25,11 @@ html {
   src: url("/Fonts/MINECRAFT.TTF") format("opentype");
 }
 
+@font-face {
+  font-family: "hel-comp";
+  src: url("/Fonts/helvetica-compressed.otf") format("opentype");
+}
+
 body {
   background-color: #f5f5f5;
   overflow-x: hidden;
@@ -594,6 +599,87 @@ main {
   width: 100%;
 }
 
+/* services ------------------------------------------------------------------------------------------------------------------------------------------ */
+
+#services {
+  padding: 0 5vw;
+}
+
+.heading h1 {
+  background-color: #FF0000;
+  display: inline-block;
+  font-family: "mc", Arial, Helvetica, sans-serif;
+  color: white;
+  padding: 0px 10px 0 12px;
+  font-size: clamp(3rem, 2.8vw, 10rem);
+  margin-bottom: 60px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 2.5vw;
+}
+
+.card {
+  background-color: #ECE7E1;
+  border: 2px solid black;
+  box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.25);
+  padding: 15px;
+
+  /* Hidden initial state */
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Revealed state */
+.card.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.logo-name {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.card-logo {
+  width: 50px;
+}
+
+.logo-name h3 {
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+.preview-img {
+  width: 100%;
+  margin: 30px 0;
+  margin-bottom: 60px;
+}
+
+.card a {
+  text-decoration: none;
+  font-family: "hel-comp", Arial, Helvetica, sans-serif;
+  background-color: #FF0000;
+  color: white;
+  font-size: 1.5rem;
+  padding: 2px 7px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 5px;
+}
+
+.card a img {
+  height: fit-content;
+}
+
 /* Why Consider Me ------------------------------------------------------------------------------------------------------------------------------------------ */
 
 #why-consider-me--services {
@@ -972,6 +1058,21 @@ footer .links {
     bottom: 2vw;
   }
 
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 2.5vw;
+    row-gap: 2.5vw;
+  }
+
+  .card {
+    background-color: #ECE7E1;
+    border: 2px solid black;
+    box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.25);
+    padding: 15px;
+  }
+
 }
 
 /* 768p wide mobile Versionnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn */
@@ -1021,6 +1122,25 @@ footer .links {
 
   #oneko {
     display: none !important;
+  }
+
+  #services {
+    padding: 0 20px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 2.5vw;
+    row-gap: 2.5vw;
+  }
+
+  .card {
+    background-color: #ECE7E1;
+    border: 2px solid black;
+    box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.25);
+    padding: 15px;
   }
 }
 
@@ -1208,5 +1328,24 @@ footer .links {
 
   .why-consider-me-heading {
     padding: 50px 0 10px 20px;
+  }
+
+  #services {
+    padding: 0 20px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    column-gap: 2.5vw;
+    row-gap: 2.5vw;
+  }
+
+  .card {
+    background-color: #ECE7E1;
+    border: 2px solid black;
+    box-shadow: 3px 5px 4px rgba(0, 0, 0, 0.25);
+    padding: 15px;
   }
 }

@@ -14,27 +14,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // --------------------------------------------------- Card Hover Sound ------------------------------------------------------------
+  // ---------------------------------------------------------- card reveal------------------
 
-  const cards = document.querySelectorAll(".card");
-  const hoverSound = new Audio("./contents/sounds/card-flipping.mp3");
-  hoverSound.preload = "auto";
+  const cards = document.querySelectorAll('.card');
 
-  function playSound(audio) {
-    const clone = audio.cloneNode();
-    clone.play().catch(() => { });
-  }
-
-  cards.forEach(card => {
-    card.addEventListener("mouseenter", () => {
-      if (!card.classList.contains("flipped")) {
-        playSound(hoverSound);
-      } else {
-        playSound(hoverSound);
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        cards.forEach((card, i) => {
+          setTimeout(() => card.classList.add('revealed'), i * 150);
+        });
+        observer.disconnect(); // only animate once
       }
     });
-  });
+  }, { threshold: 0.2 });
 
+  observer.observe(document.querySelector('.cards'));
 
   // ---------------------------------------------------------------- Lenis Smooth Scroll ---------------------------------------------------------
   const lenis = new Lenis({
