@@ -1134,6 +1134,7 @@ footer .links {
     grid-template-rows: 1fr 1fr;
     column-gap: 2.5vw;
     row-gap: 2.5vw;
+    margin-bottom: 50px;
   }
 
   .card {
