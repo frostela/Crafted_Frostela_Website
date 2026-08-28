@@ -38,9 +38,9 @@
             <li class="dropdown">
                 <a href="#">Menu</a>
                 <ul class="dropdown-menu">
-                    <li><a href="#Works">Work</a></li>
-                    <li><a href="#about-me">About</a></li>
-                    <li><a href="#contact-me">Contact</a></li>
+                    <li><a href="#Works" class="clickSound">Work</a></li>
+                    <li><a href="#about-me" class="clickSound">About</a></li>
+                    <li><a href="#contact-me" class="clickSound">Contact</a></li>
                 </ul>
             </li>
         </ul>
@@ -48,29 +48,28 @@
 
     <main>
         <section id="hero-section">
+
+            <div class="heroTopDiv">
+                <h1>
+                    Turn More Website<br>
+                    Visitors Into<br>
+                    <span>Qualified Leads.</span>
+                </h1>
+                <div class="heroTopRightDiv">
+                    <h3>
+                        I build strategic brands and high-converting websites that help businesses earn trust, generate more leads, and grow online.
+                    </h3>
+                    <a class="clickSound" href="#">Get a Free Website Audit →</a>
+                </div>
+            </div>
+
             <div class="hero-video-div">
                 <video class="hero-video" autoplay loop muted
                     src="/contents/videos/2f71d53217b6cf5c5d84444203ae7e07.mp4">
                 </video>
             </div>
 
-            <audio id="hoverSound" src="/contents/sounds/Note_block_xylobone.ogg.mp3" preload="auto"></audio>
-            <audio id="whoopSound" src="/contents/sounds/whoop-sound.mp3" preload="auto"></audio>
-
-            <div class="hero-headings">
-                <div class="h1s">
-                    <h1 class="sound1">W</h1>
-                    <h1 class="sound1">E</h1>
-                    <h1 class="sound1">L</h1>
-                    <h1 class="sound1">C</h1>
-                    <h1 class="sound1">O</h1>
-                    <h1 class="sound1">M</h1>
-                    <h1 class="sound1">E</h1>
-                </div>
-                <div>
-                    <h4>To My Portfolio</h4>
-                </div>
-            </div>
+            <audio id="clickSound" src="/contents/sounds/buttonClick.mp3" preload="auto"></audio>
         </section>
 
         <section id="about-me">
@@ -91,7 +90,7 @@
                         <div class="split-line-anim">
                             <h1 class="reveal" animate2>I’M</h1>
                         </div>
-                        <img src="/contents/images/image 142.png" alt="Mainak Das's image">
+                        <img src="/contents/images/MainakDas.png" alt="Mainak Das's image">
                         <div class="about-me-text">
                             <div class="split-line-anim" style="width: 100%;">
                                 <h1 class="reveal" animate2>MAINAK</h1>
@@ -239,7 +238,8 @@
                     </div>
                     <img class="preview-img" src="/contents/images/tcv-ss.png" alt="Tvc SS">
                     <div style="display: flex; justify-content: right;">
-                        <a href="#Works">SEE WORK 
+                        <a href="#Works" class="clickSound">
+                            See Works
                             <img src="/contents/images/Arrow 10.png" alt="Arrow">
                         </a>
                     </div>
@@ -247,35 +247,44 @@
 
                 <div class="card">
                     <div class="logo-name">
-                        <img class="card-logo" src="/contents/images/css-logo.png"
-                            alt="css Logo">
+                        <img class="card-logo" src="/contents/images/css-logo.png" alt="css Logo">
                         <h3>Landing Page<br>Design & Development</h3>
                     </div>
                     <img class="preview-img" src="/contents/images/urbantic-ss.png" alt="Urbantic SS">
-                    <div style="display: flex; justify-content: right;"><a href="#Works">SEE WORK <img
-                                src="/contents/images/Arrow 10.png" alt="Arrow"></a></div>
+                    <div style="display: flex; justify-content: right;">
+                        <a href="#Works" class="clickSound">
+                            See Works 
+                            <img src="/contents/images/Arrow 10.png" alt="Arrow">
+                        </a>
+                    </div>
                 </div>
 
                 <div class="card">
                     <div class="logo-name">
-                        <img class="card-logo" src="/contents/images/js-logo.png"
-                            alt="js Logo">
+                        <img class="card-logo" src="/contents/images/js-logo.png" alt="js Logo">
                         <h3>Portfolio<br>Design & Development</h3>
                     </div>
                     <img class="preview-img" src="/contents/images/marizonx-ss.png" alt="Marizonx SS">
-                    <div style="display: flex; justify-content: right;"><a href="#Works">SEE WORK <img
-                                src="/contents/images/Arrow 10.png" alt="Arrow"></a></div>
+                    <div style="display: flex; justify-content: right;">
+                        <a href="#Works" class="clickSound">
+                            See Works
+                            <img src="/contents/images/Arrow 10.png" alt="Arrow">
+                        </a>
+                    </div>
                 </div>
 
                 <div class="card">
                     <div class="logo-name">
-                        <img class="card-logo" src="/contents/images/Figma-logo.png"
-                            alt="Figma Logo">
+                        <img class="card-logo" src="/contents/images/Figma-logo.png" alt="Figma Logo">
                         <h3>UI/UX Design</h3>
                     </div>
                     <img class="preview-img" src="/contents/images/theint-ss.png" alt="The Int SS">
-                    <div style="display: flex; justify-content: right;"><a href="#Works">SEE WORK <img
-                                src="/contents/images/Arrow 10.png" alt="Arrow"></a></div>
+                    <div style="display: flex; justify-content: right;">
+                        <a href="#Works" class="clickSound">
+                            See Works 
+                            <img src="/contents/images/Arrow 10.png" alt="Arrow">
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -527,7 +536,7 @@
                     <input type="hidden" name="_redirect" value="">
 
                     <div class="row">
-                        <button type="submit">Submit</button>
+                        <button class="clickSound" type="submit">Submit</button>
                         <span class="ok" id="ok">Message Sent.</span>
                     </div>
                 </form>

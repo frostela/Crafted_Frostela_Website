@@ -1,15 +1,15 @@
 // ---------------------------------------------------------- Hover Sound ------------------
 document.addEventListener("DOMContentLoaded", () => {
-  const hoverElements = document.getElementsByClassName('sound1');
-  const hoversSound = document.getElementById('hoverSound');
+  const clickElements = document.getElementsByClassName('clickSound');
+  const clickSound = document.getElementById('clickSound');
 
-  if (hoversSound) {
-    hoversSound.volume = 0.3;
+  if (clickSound) {
+    clickSound.volume = 0.3;
 
-    Array.from(hoverElements).forEach(element => {
-      element.addEventListener('mouseover', () => {
-        hoversSound.currentTime = 0;
-        hoversSound.play().catch(() => { });
+    Array.from(clickElements).forEach(element => {
+      element.addEventListener('click', () => {
+        clickSound.currentTime = 0;
+        clickSound.play().catch(() => { });
       });
     });
   }
