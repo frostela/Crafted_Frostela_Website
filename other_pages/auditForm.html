@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Audit Form | Crafted Frostela</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Krona+One&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="/contents/images/favicon.png" type="image/png">
+
+    <style>
+        body {
+            background-color: white;
+        }
+
+        #contact-me .wrap {
+            width: 100%;
+            padding: 50px 20px 0 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        main {
+            padding-top: 120px;
+        }
+
+        #infoSection {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #infoSection h1 {
+            font-family:  'hel', Helvetica, Arial, sans-serif;
+            font-size: clamp(3rem, 3.5vw, 5rem);
+            font-weight: 300;
+        }
+
+        #infoSection h1 span {
+            font-family: 'ppe-italic', Arial, Helvetica, sans-serif;
+            background-image: var(--mix-red);
+            background-clip: text;
+            color: transparent;
+            font-weight: 100;
+        }
+
+        #infoSection h2 {
+            font-family: 'hel', Arial, Helvetica, sans-serif;
+            font-weight: 300;
+            margin-top: 50px;
+        }
+
+        #infoSection li{
+            margin-top: 20px;
+            list-style: none;
+            font-family: 'hel', Arial, Helvetica, sans-serif;
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+        #infoSection li span{
+            background-image: var(--mix-red);
+            background-clip: text;
+            color: transparent;
+        }
+
+        #contact-form {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img id="crafted" src="/contents/images/Crafted.png" alt="Crafted">
+            <img id="Frostela" src="/contents/images/Frostela.png" alt="Frostela">
+        </div>
+        <ul>
+            <li class="dropdown">
+                <a href="/index.html">Home</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+
+        <section id="infoSection">
+            <h1>Get Your Free <span>Website Audit</span></h1>
+            <div style="width: 100%; max-width: 800px;">
+                <h2>I'll personally review your website and record a short video showing you:</h2>
+                <li>
+                    <ul><span>1></span> Where visitors may be dropping off</ul>
+                    <ul><span>2></span> UX/conversion issues</ul>
+                    <ul><span>3></span> What I'd change</ul>
+                    <ul><span>4></span> Opportunities you're leaving on the table</ul>
+                </li>
+            </div>
+        </section>
+
+        <section id="contact-me" style="background-color: white;">
+            <div class="wrap">
+                <form id="contact-form" novalidate>
+                    <div class="flex">
+                        <label for="fullname">Tell me about your business</label>
+
+                        <div class="fullname">
+                            <div id="firstName">
+                                <input name="firstName" type="text" required minlength="1" autocomplete="given-name"
+                                    placeholder="First Name*">
+                                <div class="error" id="err-first">Please enter first name.</div>
+                            </div>
+                            <div id="lastName">
+                                <input name="lastName" type="text" required minlength="1" autocomplete="family-name"
+                                    placeholder="Last Name*">
+                                <div class="error" id="err-last">Please enter last name.</div>
+                            </div>
+                        </div>
+
+                        <div class="full">
+                            <input id="email" name="email" type="email" required autocomplete="email"
+                                placeholder="Email Id*" inputmode="email">
+                            <div class="error" id="err-email">Please enter a valid email address.</div>
+                        </div>
+
+                        <div class="full">
+                            <input id="websiteURL" name="websiteURL" type="url" required autocomplete="url"
+                                placeholder="Website URL*" inputmode="url">
+                            <div class="error" id="err-url">Please enter a valid website URL.</div>
+                        </div>
+
+                        <div class="full">
+                            <textarea id="message" name="message" required minlength="5" rows="6"
+                                placeholder="What does your business do?*"></textarea>
+                            <div class="error" id="err-msg">Message must be at least 5 characters.</div>
+                        </div>
+
+                        <div class="full">
+                            <textarea id="message" name="message" required minlength="5" rows="6"
+                                placeholder="What's your biggest website problem right now?"></textarea>
+                            <div class="error" id="err-msg">Message must be at least 5 characters.</div>
+                        </div>
+                    </div>
+
+                    <!-- Example hidden fields for some providers (adjust/remove as needed) -->
+                    <input type="hidden" name="_subject" value="New contact form submission">
+                    <input type="hidden" name="_honeypot" value="">
+                    <input type="hidden" name="_redirect" value="">
+
+                    <div class="row">
+                        <button class="clickSound" type="submit">Submit</button>
+                        <span class="ok" id="ok">Message Sent.</span>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background-color: white;">
+        <div class="links">
+            <div class="socials">
+                <a href="https://github.com/frostela"><span style="color: #000b6e;">/</span>Github</a>
+                <a href="https://www.linkedin.com/in/frostela/"><span style="color: #5861FF;">/</span>LinkedIn</a>
+                <a href="https://www.instagram.com/crafted_frostela/"><span
+                        style="color: #BF00FF;">/</span>Instagram</a>
+            </div>
+            <div class="email">
+                <a href="mailto:email@frostela.com">/email@frostela.com</a>
+            </div>
+        </div>
+
+        <div class="big-logo">
+            <img style="width: 100%; padding: 20px 0 10px;" src="/contents/images/crafted-frostela-logo-big.png"
+                alt="Crafted Frostela Big logo">
+        </div>
+        <div class="privacy">
+            <p>© All Right Reserved. 2025 Crafted. Frostela</p>
+            <p style="text-align: right;">Site by Frostela [by himself]</p>
+        </div>
+
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>

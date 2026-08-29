@@ -1,16 +1,30 @@
-// ---------------------------------------------------------- Hover Sound ------------------
 document.addEventListener("DOMContentLoaded", () => {
-  const clickElements = document.getElementsByClassName('clickSound');
+
+  // ---------------------------------------------------------- Hover Sound ------------------
   const clickSound = document.getElementById('clickSound');
 
   if (clickSound) {
     clickSound.volume = 0.3;
 
-    Array.from(clickElements).forEach(element => {
-      element.addEventListener('click', () => {
-        clickSound.currentTime = 0;
-        clickSound.play().catch(() => { });
-      });
+    document.addEventListener('click', (e) => {
+      const element = e.target.closest('.clickSound');
+
+      if (!element) return;
+
+      const href = element.href;
+
+      // Play immediately
+      clickSound.currentTime = 0;
+      clickSound.play().catch(() => { });
+
+      // Only delay actual navigation
+      if (href && href !== window.location.href) {
+        e.preventDefault();
+
+        setTimeout(() => {
+          window.location.href = href;
+        }, 10);
+      }
     });
   }
 

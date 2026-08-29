@@ -279,6 +279,9 @@ main {
 
 .heroTopDiv h1 span {
   font-family: 'ppe-italic', Arial, Helvetica, sans-serif;
+  background-image: var(--mix-red);
+  background-clip: text;
+  color: transparent;
 }
 
 .heroTopRightDiv {

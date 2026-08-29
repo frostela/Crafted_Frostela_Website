@@ -8,9 +8,14 @@
     src: url("/Fonts/helvetica-compressed.otf") format("opentype");
 }
 
+:root {
+  --mix-red: linear-gradient(135deg, rgba(99, 0, 0, 1.00) 0%, rgba(218, 2, 0, 1.00) 100%);
+  --main-red: #DA0200;
+}
+
 .border-red {
     border: 7px solid;
-    border-image: linear-gradient(146deg, rgba(99, 0, 0, 1) 0%, rgba(218, 2, 0, 1) 100%) 1;
+    border-image: var(--mix-red) 1;
 }
 
 main {
@@ -38,7 +43,10 @@ main {
 .small-heads h4 {
     font-family: Helvetica, Arial, sans-serif;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 600;
+    background-image: var(--mix-red);
+    background-clip: text;
+    color: transparent;
 }
 
 .head .web-ss {
@@ -93,7 +101,7 @@ main {
 .ss-card {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(146deg, rgba(99, 0, 0, 1.00) 0%, rgba(218, 2, 0, 1.00) 100%);
+    background: var(--mix-red);
     margin-bottom: 15px;
     break-inside: avoid;
 }
@@ -170,7 +178,7 @@ main {
   padding: 12px 30px;
   font-weight: 500;
   color: #ffffff;
-  background: linear-gradient(135deg, #96000c, #FF0014);
+  background: var(--mix-red);
   cursor: pointer;
   transition:
     transform 0.06s ease-in,
