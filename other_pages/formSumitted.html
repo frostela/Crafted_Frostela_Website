@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Submitted | Crafted Frostela</title>
+
+    <link rel="stylesheet" href="/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Krona+One&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="/contents/images/favicon.png" type="image/png">
+
+    <style>
+        body {
+            background-color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        main {
+            padding-top: 150px;
+        }
+
+        #thankForSubmitting {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #thankForSubmitting h1 {
+            font-family: 'hel', Helvetica, Arial, sans-serif;
+            font-size: clamp(3rem, 6vw, 10rem);
+            font-weight: 300;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        #thankForSubmitting h1 span {
+            background-image: var(--mix-red);
+            background-clip: text;
+            color: transparent;
+        }
+
+        #thankForSubmitting h3 {
+            font-family: 'hel', Arial, Helvetica, sans-serif;
+            font-weight: 300;
+            text-align: left;
+        }
+
+        #thankForSubmitting li {
+            margin-top: 20px;
+            list-style: none;
+            font-family: 'hel', Arial, Helvetica, sans-serif;
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+
+        #thankForSubmitting li span {
+            background-image: var(--mix-red);
+            background-clip: text;
+            color: transparent;
+        }
+
+        .butts a {
+            font-family: 'hel', Arial, sans-serif;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0;
+            background: transparent;
+            width: fit-content;
+            color: #000;
+            font-size: clamp(1rem, 1.1vw, 3rem);
+        }
+
+        .butts a:hover {
+            background-image: var(--mix-red);
+            background-clip: text;
+            color: transparent;
+        }
+
+        .butts a span {
+            background-image: var(--mix-red);
+            background-clip: text;
+            color: transparent;
+            font-size: clamp(1.2rem, 1.2vw, 3.2rem);
+        }
+
+        #bookButton {
+            font-family: 'hel', Arial, sans-serif;
+            font-weight: 300;
+            text-decoration: none;
+            padding: 10px 20px;
+            background: var(--mix-red);
+            color: white;
+            font-size: clamp(1rem, 1.1vw, 3rem);
+            display: block;
+            margin-top: 20px !important;
+            width: fit-content;
+        }
+
+        .directRequest {
+            width: 100%;
+            margin-top: 80px;
+        }
+
+        .directRequest h2 {
+            font-size: clamp(1.5rem, 2vw, 7rem);
+            font-family: 'hel', Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img id="crafted" src="/contents/images/Crafted.png" alt="Crafted">
+            <img id="Frostela" src="/contents/images/Frostela.png" alt="Frostela">
+        </div>
+        <ul>
+            <li class="dropdown">
+                <a href="/index.html">Home</a>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <section id="thankForSubmitting">
+            <h1>🎉<span>Your audit request is in!</span></h1>
+            <h3>I'll take a look at your website and find the biggest opportunities to improve your conversions.
+                I'll send your personalized audit to the email you provided.
+            </h3>
+            <div style="max-width: 1200px; width: 100%; display: flex; flex-direction: column; align-items: center;">
+
+                <div class="directRequest">
+                    <h2>Already know you want to improve your website?</h2>
+                    <h3>If you're actively considering a redesign, new website, or improvements to your online presence,
+                        you can apply for a 20-minute strategy call.
+                    </h3>
+                    <h3 style="margin-top: 20px;">We'll look at:</h3>
+                    <li>
+                        <ul><span>1></span> What's currently holding your website back</ul>
+                        <ul><span>2></span> What I'd prioritize fixing</ul>
+                        <ul><span>3></span> What I'd recommend doing next</ul>
+                        <ul><span>4></span> Whether we're actually a good fit</ul>
+                    </li>
+                    <a href="https://calendly.com/frostela/strategy-call" target="_blank" id="bookButton" class="clickSound">Apply for a Strategy Call →</a>
+                    <p
+                        style="margin-top: 10px; font-size: 1rem; font-weight: 100; font-family: Arial, Helvetica, sans-serif;">
+                        <i>No pressure. If you just want the audit, that's completely fine</i>
+                    </p>
+                </div>
+                <div class="directRequest">
+                    <h2>While you wait :</h2>
+                    <div class="butts" style="display: flex; gap: 20px; width: 100%; margin: 30px 0 100px 0;">
+                        <a href=""><span>[</span> View My Work <span>]</span></a>
+                        <a href=""><span>[</span> Follow me <span>]</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer style="background-color: white;">
+        <div class="links">
+            <div class="socials">
+                <a href="https://github.com/frostela"><span style="color: #000b6e;">/</span>Github</a>
+                <a href="https://www.linkedin.com/in/frostela/"><span style="color: #5861FF;">/</span>LinkedIn</a>
+                <a href="https://www.instagram.com/crafted_frostela/"><span
+                        style="color: #BF00FF;">/</span>Instagram</a>
+            </div>
+            <div class="email">
+                <a href="mailto:email@frostela.com">/email@frostela.com</a>
+            </div>
+        </div>
+
+        <div class="big-logo">
+            <img style="width: 100%; padding: 20px 0 10px;" src="/contents/images/crafted-frostela-logo-big.png"
+                alt="Crafted Frostela Big logo">
+        </div>
+        <div class="privacy">
+            <p>© All Right Reserved. 2025 Crafted. Frostela</p>
+            <p style="text-align: right;">Site by Frostela [by himself]</p>
+        </div>
+
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="/script.js"></script>
+</body>
+
+</html>

@@ -40,7 +40,7 @@
         }
 
         #infoSection h1 {
-            font-family:  'hel', Helvetica, Arial, sans-serif;
+            font-family: 'hel', Helvetica, Arial, sans-serif;
             font-size: clamp(3rem, 3.5vw, 5rem);
             font-weight: 300;
         }
@@ -59,7 +59,7 @@
             margin-top: 50px;
         }
 
-        #infoSection li{
+        #infoSection li {
             margin-top: 20px;
             list-style: none;
             font-family: 'hel', Arial, Helvetica, sans-serif;
@@ -67,18 +67,21 @@
             font-size: 1.2rem;
         }
 
-        #infoSection li span{
+        #infoSection li span {
             background-image: var(--mix-red);
             background-clip: text;
             color: transparent;
         }
 
-        #contact-form {
+        #audit-form {
             width: 100%;
             max-width: 800px;
         }
 
-        
+        #audit-firstName,
+        #audit-lastName {
+            width: 50%;
+        }
     </style>
 </head>
 
@@ -111,57 +114,89 @@
 
         <section id="contact-me" style="background-color: white;">
             <div class="wrap">
-                <form id="contact-form" novalidate>
+                <form id="audit-form" novalidate>
+
                     <div class="flex">
-                        <label for="fullname">Tell me about your business</label>
+
+                        <label for="audit-firstName">Tell me about your business</label>
 
                         <div class="fullname">
-                            <div id="firstName">
-                                <input name="firstName" type="text" required minlength="1" autocomplete="given-name"
+
+                            <div id="audit-firstName">
+                                <input name="first_name" type="text" required autocomplete="given-name"
                                     placeholder="First Name*">
-                                <div class="error" id="err-first">Please enter first name.</div>
+
+                                <div class="error" id="audit-err-first">
+                                    Please enter first name.
+                                </div>
                             </div>
-                            <div id="lastName">
-                                <input name="lastName" type="text" required minlength="1" autocomplete="family-name"
+
+                            <div id="audit-lastName">
+                                <input name="last_name" type="text" required autocomplete="family-name"
                                     placeholder="Last Name*">
-                                <div class="error" id="err-last">Please enter last name.</div>
+
+                                <div class="error" id="audit-err-last">
+                                    Please enter last name.
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                        <div class="full">
+                            <input id="audit-email" name="email" type="email" required autocomplete="email"
+                                placeholder="Email Id*" inputmode="email">
+
+                            <div class="error" id="audit-err-email">
+                                Please enter a valid email address.
                             </div>
                         </div>
 
-                        <div class="full">
-                            <input id="email" name="email" type="email" required autocomplete="email"
-                                placeholder="Email Id*" inputmode="email">
-                            <div class="error" id="err-email">Please enter a valid email address.</div>
-                        </div>
 
                         <div class="full">
-                            <input id="websiteURL" name="websiteURL" type="url" required autocomplete="url"
+                            <input id="audit-websiteURL" name="website" type="url" required autocomplete="url"
                                 placeholder="Website URL*" inputmode="url">
-                            <div class="error" id="err-url">Please enter a valid website URL.</div>
+
+                            <div class="error" id="audit-err-url">
+                                Please enter a valid website URL.
+                            </div>
                         </div>
 
+
                         <div class="full">
-                            <textarea id="message" name="message" required minlength="5" rows="6"
+                            <textarea id="audit-business" name="business" required minlength="5" rows="6"
                                 placeholder="What does your business do?*"></textarea>
-                            <div class="error" id="err-msg">Message must be at least 5 characters.</div>
+
+                            <div class="error" id="audit-err-business">
+                                Please tell me a little about your business.
+                            </div>
                         </div>
 
+
                         <div class="full">
-                            <textarea id="message" name="message" required minlength="5" rows="6"
-                                placeholder="What's your biggest website problem right now?"></textarea>
-                            <div class="error" id="err-msg">Message must be at least 5 characters.</div>
+                            <textarea id="audit-problem" name="problem" required minlength="5" rows="6"
+                                placeholder="What's your biggest website problem right now?*"></textarea>
+
+                            <div class="error" id="audit-err-problem">
+                                Please tell me about your biggest website problem.
+                            </div>
                         </div>
+
                     </div>
 
-                    <!-- Example hidden fields for some providers (adjust/remove as needed) -->
-                    <input type="hidden" name="_subject" value="New contact form submission">
-                    <input type="hidden" name="_honeypot" value="">
-                    <input type="hidden" name="_redirect" value="">
 
                     <div class="row">
-                        <button class="clickSound" type="submit">Submit</button>
-                        <span class="ok" id="ok">Message Sent.</span>
+
+                        <button class="clickSound" type="submit" id="audit-submit">
+                            Submit
+                        </button>
+
+                        <span class="ok" id="audit-ok">
+                            Sending...
+                        </span>
+
                     </div>
+
                 </form>
             </div>
         </section>
@@ -192,6 +227,172 @@
     </footer>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+    <script>
+        // --------------------------------------------------------------------
+        // Free Website Audit Form
+        // --------------------------------------------------------------------
+
+        (function () {
+            emailjs.init({
+                publicKey: "2KE1Abs0nB-KGgJcv"
+            });
+        })();
+
+
+        const auditForm = document.getElementById('audit-form');
+
+        if (auditForm) {
+
+            const auditOk = document.getElementById('audit-ok');
+            const auditSubmit = document.getElementById('audit-submit');
+
+            const fields = {
+                first: document.querySelector('#audit-firstName input'),
+                last: document.querySelector('#audit-lastName input'),
+                email: document.getElementById('audit-email'),
+                website: document.getElementById('audit-websiteURL'),
+                business: document.getElementById('audit-business'),
+                problem: document.getElementById('audit-problem')
+            };
+
+            const errors = {
+                first: document.getElementById('audit-err-first'),
+                last: document.getElementById('audit-err-last'),
+                email: document.getElementById('audit-err-email'),
+                website: document.getElementById('audit-err-url'),
+                business: document.getElementById('audit-err-business'),
+                problem: document.getElementById('audit-err-problem')
+            };
+
+
+            function showError(el, errEl, condition) {
+
+                errEl.style.display = condition ? 'block' : 'none';
+
+                if (condition) {
+                    el.setAttribute('aria-invalid', 'true');
+                } else {
+                    el.removeAttribute('aria-invalid');
+                }
+            }
+
+
+            function validate() {
+
+                const values = {
+
+                    first: !fields.first.value.trim(),
+
+                    last: !fields.last.value.trim(),
+
+                    email: !fields.email.validity.valid,
+
+                    website: !fields.website.validity.valid,
+
+                    business: fields.business.value.trim().length < 5,
+
+                    problem: fields.problem.value.trim().length < 5
+
+                };
+
+
+                showError(
+                    fields.first,
+                    errors.first,
+                    values.first
+                );
+
+                showError(
+                    fields.last,
+                    errors.last,
+                    values.last
+                );
+
+                showError(
+                    fields.email,
+                    errors.email,
+                    values.email
+                );
+
+                showError(
+                    fields.website,
+                    errors.website,
+                    values.website
+                );
+
+                showError(
+                    fields.business,
+                    errors.business,
+                    values.business
+                );
+
+                showError(
+                    fields.problem,
+                    errors.problem,
+                    values.problem
+                );
+
+
+                return !Object.values(values).some(Boolean);
+            }
+
+
+            auditForm.addEventListener('input', validate);
+
+
+            auditForm.addEventListener('submit', async (e) => {
+
+                e.preventDefault();
+
+
+                if (!validate()) {
+                    return;
+                }
+
+
+                // Prevent double submissions
+                auditSubmit.disabled = true;
+
+                auditOk.textContent = 'Sending...';
+                auditOk.style.display = 'inline';
+
+
+                try {
+
+                    await emailjs.send(
+                        'service_81t7vf4',
+                        'template_joqu9wr',
+                        {
+                            firstName: fields.first.value,
+                            lastName: fields.last.value,
+                            email: fields.email.value,
+                            websiteURL: fields.website.value,
+                            business: fields.business.value,
+                            problem: fields.problem.value
+                        }
+                    );
+
+                    // Email sent successfully
+                    window.location.href = 'formSumitted.html';
+
+
+                } catch (err) {
+
+                    console.error(err);
+
+                    auditSubmit.disabled = false;
+
+                    auditOk.style.display = 'none';
+
+                    alert('Failed to send. Please try again.');
+
+                }
+
+            });
+
+        }
+    </script>
     <script src="/script.js"></script>
 </body>
 
