@@ -33,14 +33,16 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 0 20px;
         }
 
         #thankForSubmitting h1 {
             font-family: 'hel', Helvetica, Arial, sans-serif;
             font-size: clamp(3rem, 6vw, 10rem);
             font-weight: 300;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             text-align: center;
+            line-height: 1;
         }
 
         #thankForSubmitting h1 span {
@@ -53,6 +55,7 @@
             font-family: 'hel', Arial, Helvetica, sans-serif;
             font-weight: 300;
             text-align: left;
+            line-height: 1.2;
         }
 
         #thankForSubmitting li {
@@ -114,6 +117,14 @@
         .directRequest h2 {
             font-size: clamp(1.5rem, 2vw, 7rem);
             font-family: 'hel', Arial, Helvetica, sans-serif;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 550px) {
+            #thankForSubmitting h1{
+                text-align: left;
+            }
         }
     </style>
 </head>
@@ -150,7 +161,8 @@
                         <ul><span>3></span> What I'd recommend doing next</ul>
                         <ul><span>4></span> Whether we're actually a good fit</ul>
                     </li>
-                    <a href="https://calendly.com/frostela/strategy-call" target="_blank" id="bookButton" class="clickSound">Apply for a Strategy Call →</a>
+                    <a href="https://calendly.com/frostela/strategy-call" target="_blank" id="bookButton"
+                        class="clickSound">Apply for a Strategy Call →</a>
                     <p
                         style="margin-top: 10px; font-size: 1rem; font-weight: 100; font-family: Arial, Helvetica, sans-serif;">
                         <i>No pressure. If you just want the audit, that's completely fine</i>
